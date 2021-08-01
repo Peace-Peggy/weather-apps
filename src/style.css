@@ -1,13 +1,7 @@
 body{
   font-family: arial, sans-serif;
 }
-.app-border{
-  max-width    : 600px;
-  margin       : 0 auto;
-  padding      : 20px;
-  border       : 1px solid #DADDE1;
-  border-radius: 10px;
-}
+
 h1{
   color        : #878787;
   font-size    : 24px;
@@ -27,4 +21,32 @@ li{
   font-size  : 16px;
   font-weight: 100;
   line-height: 19px;
+}
+.app-border {
+  padding      : 20px;
+  border       : 1px solid #DADDE1;
+  border-radius: 10px;
+}
+.app-wrapper{
+   max-width: 600px;
+   margin   : 0 auto;
+}
+.city-view{
+  margin-bottom: 20px;
+}
+.weather-temp img{
+  margin-right: 10px;
+  height      : 64px;
+  width       : 64px;
+}
+.weather-temp strong{
+  color      : rgb(33, 33,33);
+  font-size  : 64px;
+  font-weight: 400;
+  line-height: 1;
+}
+.weather-temp .units{
+  position : relative;
+  font-size: 16px;
+  top      : -32px;
 }

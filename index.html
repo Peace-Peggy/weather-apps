@@ -10,22 +10,31 @@
 </head>
 <body>
   <div class="container">
+    <div class="app-wrapper">
     <div class="app-border">
-      <h1>
-        Winnipeg
-      </h1>
-      <ul>
-        <li>
-          Saturday 12:00
-        </li>
-        <li>
-          Smoke
-        </li>
-      </ul>
+      <div class="city-view">
+        <h1>
+          Winnipeg
+        </h1>
+        <ul>
+          <li>
+            Saturday 12:00
+          </li>
+          <li>
+            Smoke
+          </li>
+        </ul>
+      </div>
       <div class="row">
         <div class="col-6">
-          <img src="https://ssl.gstatic.com/onebox/weather/64/fog.png" alt="Smoke" />
-          12℃ | ℉
+          <div class="clearfix weather-temp">
+            <img src="https://ssl.gstatic.com/onebox/weather/64/fog.png" 
+            alt="Smoke" 
+            class="float-left"/>
+            <div class="float-left">
+              <strong>12</strong><span class="units">℃ | <a href="#">℉</a></span>
+            </div>
+          </div>
         </div>
         <div class="col-6">
           <ul>
@@ -35,11 +44,13 @@
           </ul>
         </div>
       </div>
-        <small>
+
+    </div>
+     <small>
         <a href="https://github.com/Peace-Peggy/weather-apps" target="_blank">Open-source Code</a>
         by Peace-Peggy Abua
       </small>
-    </div>
+      </div>
   </div>
   <script src="src/app.js"></script>
 </body>
