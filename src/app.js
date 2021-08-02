@@ -46,9 +46,20 @@ function displayTemperature(response){
       iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${getIconCode}@2x.png`);
       iconElement.setAttribute("alt", `${getWeatherDescription}`)
 }
+function searchCity(city){
+  let apiKey = "76408f461806bdd0e29fa34c52cb5991";
+  let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
+  axios.get(apiURL).then(displayTemperature);
+}
 
-let apiKey = "76408f461806bdd0e29fa34c52cb5991";
-let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=Winnipeg&appid=${apiKey}&units=metric`;
+function submitForm(event){
+  event.preventDefault();
+  let cityInput = document.querySelector("#city-input");
+  searchCity(cityInput.value);
 
-axios.get(apiURL).then(displayTemperature);
+}
+
+searchCity("Winnipeg");
+let weatherForm = document.querySelector("#search-city");
+weatherForm.addEventListener("submit", submitForm);
