@@ -24,6 +24,7 @@ function formatDateTime(timestamp){
 
 }
 function displayTemperature(response){
+  let iconElement                  = document.querySelector("#icon");
   let getCityName                  = response.data.name;
   let getWeatherDescription        = response.data.weather[0].description;
   let getHumidity                  = response.data.main.humidity;
@@ -41,7 +42,12 @@ function displayTemperature(response){
       wind.innerHTML               = getWind;
   let dateElement                  = document.querySelector("#date-time");
       dateElement.innerHTML        = formatDateTime(response.data.dt*1000);
+  let getIconCode                  = response.data.weather[0].icon;
+      iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${getIconCode}@2x.png`);
+      iconElement.setAttribute("alt", `${getWeatherDescription}`)
 }
+
+
 let apiKey = "76408f461806bdd0e29fa34c52cb5991";
 let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=Winnipeg&appid=${apiKey}&units=metric`;
 
